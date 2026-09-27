@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InfoBeauty</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<meta property="og:title" content="InfoBeauty — Projeto TCC">
+<meta property="og:description" content="Projeto InfoBeauty — maquiagem, cosméticos e tutoriais.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InfoBeauty — Projeto TCC">
+<meta name="twitter:description" content="Projeto InfoBeauty — maquiagem, cosméticos e tutoriais.">
+
+
+  
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+
+        <div class="logo">
+            INFO<span>BEAUTY</span>
+        </div>
+
+        <nav>
+            <button onclick="tab('home')">
+                Início
+            </button>
+
+            <button
+                id="productsNav"
+                class="locked-nav"
+                onclick="protectedTab('products')">
+                Produtos
+            </button>
+
+            <button
+                id="tutorialsNav"
+                class="locked-nav"
+                onclick="protectedTab('tutorials')">
+                Tutoriais
+            </button>
+
+            <button
+                class="outline"
+                onclick="tab('register')">
+                Cadastro
+            </button>
+
+            <button
+                id="loginNav"
+                class="primary"
+                onclick="tab('login')">
+                Entrar
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <!-- Página inicial -->
+        <section id="home" class="page active">
+
+            <div class="hero">
+
+                <div>
+
+                    <em>escolha sua beleza</em>
+
+                    <h1>
+                        INFO<br>
+                        BEAUTY
+                    </h1>
+
+                    <p>
+                        Um espaço simples para descobrir maquiagem,
+                        cosméticos, tutoriais e dicas.
+                    </p>
+
+                    <button
+                        class="primary big"
+                        onclick="tab('register')">
+                        Criar cadastro
+                    </button>
+
+                    <button
+                        class="outline big"
+                        onclick="tab('login')">
+                        Entrar
+                    </button>
+
+                </div>
+
+
+                <!-- Ilustração -->
+                <div class="art">
+
+                    <div class="mirror"></div>
+
+                    <div class="palette">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                    <div class="lip">
+                        💄
+                    </div>
+
+                    <span class="spark">
+                        ✦
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Destaques -->
+            <div class="features">
+
+                <article>
+
+                    <b>01</b>
+
+                    <div>
+                        <h3>
+                            Maquiagem
+                        </h3>
+
+                        <p>
+                            Aprenda técnicas simples.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <b>02</b>
+
+                    <div>
+                        <h3>
+                            Cosméticos
+                        </h3>
+
+                        <p>
+                            Conheça produtos.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <b>03</b>
+
+                    <div>
+                        <h3>
+                            Inspiração
+                        </h3>
+
+                        <p>
+                            Descubra novas ideias.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Página de cadastro -->
+        <section id="register" class="page">
+
+            <button
+                class="back"
+                onclick="tab('home')">
+                ← Voltar
+            </button>
+
+            <div class="card">
+
+                <em>seu espaço</em>
+
+                <h2>
+                    Cadastro
+                </h2>
+
+                <p>
+                    Crie seu acesso ao InfoBeauty.
+                </p>
+
+
+                <form id="regForm">
+
+                    <label>
+                        Nome
+
+                        <input
+                            id="name"
+                            required>
+                    </label>
+
+
+                    <label>
+                        E-mail
+
+                        <input
+                            id="email"
+                            type="email"
+                            required>
+                    </label>
+
+
+                    <label>
+                        Senha
+
+                        <input
+                            id="pass"
+                            type="password"
+                            minlength="4"
+                            required>
+                    </label>
+
+
+                    <button class="primary full">
+                        Criar cadastro
+                    </button>
+
+                </form>
+
+                <p id="regMsg"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Página de login -->
+        <section id="login" class="page">
+
+            <button
+                class="back"
+                onclick="tab('home')">
+                ← Voltar
+            </button>
+
+            <div class="card">
+
+                <em>bem-vinda de volta</em>
+
+                <h2>
+                    Entrar
+                </h2>
+
+
+                <form id="loginForm">
+
+                    <label>
+                        E-mail
+
+                        <input
+                            id="lemail"
+                            type="email"
+                            required>
+                    </label>
+
+
+                    <label>
+                        Senha
+
+                        <input
+                            id="lpass"
+                            type="password"
+                            required>
+                    </label>
+
+
+                    <button class="primary full">
+                        Entrar
+                    </button>
+
+                </form>
+
+                <p id="loginMsg"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Página da conta -->
+        <section id="account" class="page">
+
+            <button
+                class="back"
+                onclick="tab('home')">
+                ← Voltar
+            </button>
+
+            <div class="card center">
+
+                <em>seu espaço</em>
+
+                <h2 id="welcome"></h2>
+
+                <p>
+                    Cadastro salvo neste celular.
+                </p>
+
+                <button
+                    class="outline"
+                    onclick="logout()">
+                    Sair
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Página de produtos -->
+        <section id="products" class="page">
+
+            <button
+                class="back"
+                onclick="tab('home')">
+                ← Voltar
+            </button>
+
+
+            <div class="heading pink">
+
+                <em>
+                    escolha seus favoritos
+                </em>
+
+                <h2>
+                    PRODUTOS
+                </h2>
+
+                <p>
+                    Cosméticos simples para conhecer.
+                </p>
+
+            </div>
+
+
+            <!-- Pesquisa de produtos -->
+            <div class="search">
+
+                <input
+                    id="ps"
+                    placeholder="Quais produtos você procura?">
+
+                <button>
+                    ⌕
+                </button>
+
+            </div>
+
+
+            <!-- Filtros -->
+            <div id="filters"></div>
+
+
+            <!-- Produtos -->
+            <div
+                id="pg"
+                class="grid">
+            </div>
+
+        </section>
+
+
+        <!-- Página de tutoriais -->
+        <section id="tutorials" class="page">
+
+            <button
+                class="back"
+                onclick="tab('home')">
+                ← Voltar
+            </button>
+
+
+            <div class="heading">
+
+                <em>
+                    sua melhor versão
+                </em>
+
+                <h2>
+                    TUTORIAIS
+                </h2>
+
+                <p>
+                    Aprenda maquiagem de forma simples.
+                </p>
+
+            </div>
+
+
+            <!-- Pesquisa de tutoriais -->
+            <div class="search">
+
+                <input
+                    id="ts"
+                    placeholder="O que você procura?">
+
+                <button>
+                    ⌕
+                </button>
+
+            </div>
+
+
+            <!-- Tutoriais -->
+            <div
+                id="tg"
+                class="grid">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+  </html>
