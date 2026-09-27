@@ -1,0 +1,1539 @@
+/* =========================================================
+   InfoBeauty
+   Estilo principal do site
+   ========================================================= */
+
+/* -------------------------
+   Fontes
+   ------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap');
+
+
+/* =========================================================
+   VARIÁVEIS
+   ========================================================= */
+
+:root {
+    --olive: #c9c995;
+    --olive-dark: #9d940f;
+
+    --pink: #f48699;
+    --pink-deep: #df3f78;
+    --hot: #d92e68;
+
+    --cream: #fff1df;
+    --cream-2: #fff8ee;
+
+    --ink: #3b3032;
+    --wine: #8c274c;
+
+    --line: #d7b7a9;
+
+    --shadow: 0 12px 0 rgba(45, 27, 28, 0.16);
+}
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--olive);
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+header {
+    min-height: 88px;
+
+    background: var(--cream);
+
+    border-bottom: 1px solid rgba(76, 46, 47, 0.22);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px clamp(20px, 5vw, 70px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: 'DM Sans', Arial, sans-serif;
+
+    font-size: clamp(20px, 2.2vw, 30px);
+
+    letter-spacing: 6px;
+
+    color: #b3aa4d;
+
+    font-weight: 500;
+}
+
+.logo span {
+    color: #df6378;
+}
+
+
+/* Navegação */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    padding: 3px;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav button {
+    border: 0;
+
+    background: transparent;
+
+    color: #4a3436;
+
+    padding: 10px 15px;
+
+    white-space: nowrap;
+
+    font-weight: 500;
+}
+
+nav button:hover {
+    color: var(--wine);
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.primary,
+.outline {
+    border-radius: 999px;
+
+    padding: 12px 22px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+
+    box-shadow: none;
+}
+
+
+/* Botão principal */
+
+.primary {
+    background: var(--wine);
+
+    color: #fff;
+
+    border: 2px solid var(--wine);
+}
+
+
+/* Botão secundário */
+
+.outline {
+    background: var(--cream-2);
+
+    color: var(--wine);
+
+    border: 2px solid var(--wine);
+}
+
+
+/* Efeito dos botões */
+
+.primary:hover,
+.outline:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 0 rgba(45, 27, 28, 0.18);
+}
+
+
+/* Botões maiores */
+
+.big {
+    padding: 14px 27px;
+}
+
+
+/* Botão ocupando toda a largura */
+
+.full {
+    width: 100%;
+}
+
+
+/* =========================================================
+   PÁGINAS / ABAS
+   ========================================================= */
+
+.page {
+    display: none;
+
+    min-height: calc(100vh - 88px);
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* Botão voltar */
+
+.back {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--wine);
+
+    font-weight: 700;
+
+    margin: 24px 5%;
+
+    font-size: 17px;
+
+    padding: 8px 0;
+}
+
+
+/* =========================================================
+   PÁGINA INICIAL
+   ========================================================= */
+
+#home {
+    background: var(--olive);
+}
+
+
+/* Área principal */
+
+.hero {
+    min-height: 760px;
+
+    padding: 70px clamp(28px, 7vw, 105px) 55px;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decoração circular */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    background: rgba(244, 134, 153, 0.25);
+
+    border-radius: 50%;
+
+    right: -100px;
+    top: -120px;
+}
+
+
+/* Estrela decorativa */
+
+.hero::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 42%;
+    bottom: 8%;
+
+    font-size: 42px;
+
+    color: #fff;
+
+    opacity: 0.75;
+}
+
+
+/* Texto cursivo */
+
+.hero em,
+.heading em,
+.card em {
+    font-family: 'Parisienne', cursive;
+
+    font-size: clamp(30px, 4vw, 52px);
+
+    font-style: normal;
+
+    color: var(--pink-deep);
+}
+
+
+/* Título */
+
+.hero h1 {
+    font-family: 'DM Sans', Arial, sans-serif;
+
+    font-weight: 400;
+
+    font-size: clamp(76px, 11vw, 155px);
+
+    line-height: 0.78;
+
+    letter-spacing: -6px;
+
+    margin: 15px 0 50px;
+
+    color: var(--olive-dark);
+}
+
+
+/* Texto do hero */
+
+.hero p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    max-width: 610px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   ILUSTRAÇÃO DA HOME
+   ========================================================= */
+
+.art {
+    height: 520px;
+
+    position: relative;
+
+    color: var(--pink-deep);
+
+    filter: drop-shadow(
+        0 8px 0 rgba(63, 35, 35, 0.08)
+    );
+}
+
+
+/* Paleta */
+
+.palette {
+    position: absolute;
+
+    right: 0;
+    bottom: 30px;
+
+    width: min(430px, 90%);
+    height: 260px;
+
+    background: #f6a0aa;
+
+    border: 10px solid #a44a60;
+
+    border-radius: 16px;
+
+    padding: 26px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    box-shadow: 0 12px 0 #6f3547;
+
+    transform: rotate(-8deg);
+}
+
+
+/* Parte superior da paleta */
+
+.palette::before {
+    content: "";
+
+    position: absolute;
+
+    right: -10px;
+    top: -155px;
+
+    width: 145px;
+    height: 135px;
+
+    background: var(--cream-2);
+
+    border: 10px solid #a44a60;
+
+    border-bottom: 0;
+
+    transform: skewY(-9deg);
+
+    border-radius: 4px 8px 0 0;
+}
+
+
+/* Sombras da paleta */
+
+.palette i {
+    background: #f7c1bc;
+
+    border: 3px solid #e45c7d;
+
+    border-radius: 5px;
+}
+
+
+/* Variação das cores */
+
+.palette i:nth-child(3n) {
+    background: #df3971;
+}
+
+.palette i:nth-child(4n) {
+    background: #ffd1a8;
+}
+
+
+/* Espelho */
+
+.mirror {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    width: 125px;
+    height: 75px;
+
+    background: #f2a0b0;
+
+    border: 14px solid #df3f78;
+
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+}
+
+
+/* Batom */
+
+.lip {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    font-size: 95px;
+
+    transform: rotate(-18deg);
+}
+
+
+/* Estrela */
+
+.spark {
+    position: absolute;
+}
+
+
+/* =========================================================
+   SEÇÃO DE RECURSOS
+   ========================================================= */
+
+.features {
+    background: var(--pink);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+
+    padding: 60px clamp(25px, 8vw, 110px);
+
+    position: relative;
+}
+
+
+/* Decoração */
+
+.features::before {
+    content: "";
+
+    position: absolute;
+
+    left: -80px;
+    bottom: -90px;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 241, 223, 0.12);
+}
+
+
+/* Item */
+
+.features article {
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+
+    padding: 25px 10px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Número */
+
+.features b {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 25px;
+
+    color: var(--cream);
+}
+
+
+/* Título */
+
+.features h3 {
+    font: 600 32px 'Cormorant Garamond', Georgia, serif;
+
+    color: var(--cream);
+
+    margin: 0 0 3px;
+}
+
+
+/* Descrição */
+
+.features p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 21px;
+
+    margin: 0;
+
+    color: #fff3e8;
+}
+
+
+/* =========================================================
+   CADASTRO / LOGIN / CONTA
+   ========================================================= */
+
+#register,
+#login,
+#account {
+    background: var(--pink);
+
+    padding-bottom: 70px;
+}
+
+
+/* Card */
+
+.card {
+    max-width: 540px;
+
+    margin: 20px auto;
+
+    padding: 44px;
+
+    background: var(--cream-2);
+
+    border: 0;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+}
+
+
+/* Estrela do card */
+
+.card::before {
+    content: "✦";
+
+    position: absolute;
+
+    right: 28px;
+    top: 20px;
+
+    color: var(--pink-deep);
+
+    font-size: 28px;
+}
+
+
+/* Título do card */
+
+.card h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-weight: 600;
+
+    font-size: 65px;
+
+    color: var(--wine);
+
+    margin: 4px 0 12px;
+}
+
+
+/* Texto */
+
+.card p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 22px;
+}
+
+
+/* Formulário */
+
+.card form {
+    display: grid;
+
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+
+/* Labels */
+
+.card label {
+    font-weight: 700;
+
+    color: var(--wine);
+}
+
+
+/* Campos */
+
+.card input {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding: 15px 16px;
+
+    background: white;
+
+    border: 1px solid #d9bbb0;
+
+    border-radius: 12px;
+
+    outline: 0;
+
+    color: var(--ink);
+}
+
+
+/* Campo selecionado */
+
+.card input:focus {
+    border-color: var(--pink-deep);
+
+    box-shadow:
+        0 0 0 3px rgba(223, 63, 120, 0.12);
+}
+
+
+/* Conta centralizada */
+
+.center {
+    text-align: center;
+}
+
+
+/* =========================================================
+   TÍTULOS DAS SEÇÕES
+   ========================================================= */
+
+.heading {
+    text-align: center;
+
+    padding: 65px 20px 30px;
+
+    position: relative;
+}
+
+
+.heading h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-weight: 500;
+
+    font-size: clamp(58px, 8vw, 100px);
+
+    letter-spacing: -2px;
+
+    color: var(--pink-deep);
+
+    margin: 4px 0 5px;
+}
+
+
+.heading p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 23px;
+
+    margin: 0 auto;
+
+    max-width: 680px;
+}
+
+
+/* Título da área rosa */
+
+.heading.pink {
+    background: var(--pink);
+
+    color: var(--cream);
+}
+
+.heading.pink em {
+    color: #fff1df;
+}
+
+.heading.pink h2 {
+    color: #fff1df;
+}
+
+
+/* =========================================================
+   PRODUTOS
+   ========================================================= */
+
+#products {
+    background: var(--pink);
+
+    min-height: 100vh;
+
+    padding-bottom: 40px;
+}
+
+
+/* Barra de pesquisa */
+
+.search {
+    max-width: 610px;
+
+    margin: 20px auto 35px;
+
+    display: flex;
+
+    background: var(--cream-2);
+
+    border: 0;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 0 rgba(45, 27, 28, 0.10);
+}
+
+
+.search input {
+    flex: 1;
+
+    border: 0;
+
+    outline: 0;
+
+    padding: 16px 24px;
+
+    background: transparent;
+
+    font-size: 17px;
+
+    color: var(--ink);
+}
+
+
+.search input::placeholder {
+    color: #756b69;
+}
+
+
+/* Botão da pesquisa */
+
+.search button {
+    width: 68px;
+
+    border: 0;
+
+    background: var(--cream-2);
+
+    color: #4b4141;
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   FILTROS DE PRODUTOS
+   ========================================================= */
+
+#filters {
+    max-width: 1050px;
+
+    margin: 0 auto 10px;
+
+    padding: 0 20px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.filter {
+    border: 1px solid #d9b7ad;
+
+    background: #fff8ef;
+
+    color: #7b2548;
+
+    border-radius: 999px;
+
+    padding: 10px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.filter.active {
+    background: #7f2147;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.grid {
+    max-width: 1100px;
+
+    margin: 25px auto 60px;
+
+    padding: 0 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(235px, 1fr));
+
+    gap: 26px;
+}
+
+
+/* =========================================================
+   CARD DE PRODUTO
+   ========================================================= */
+
+.product {
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: var(--cream-2);
+
+    border: 0;
+
+    border-radius: 22px;
+
+    padding: 16px;
+
+    box-shadow:
+        0 7px 0 rgba(45, 27, 28, 0.12);
+
+    transition: 0.2s ease;
+}
+
+
+.product:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Área da imagem */
+
+.pic {
+    height: 190px;
+
+    background: #f4a0aa;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 72px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Imagem do produto */
+
+.pic img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Zoom da imagem */
+
+.product:hover .pic img {
+    transform: scale(1.04);
+}
+
+
+/* Estrela da imagem */
+
+.pic::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    color: #fff;
+
+    font-size: 25px;
+}
+
+
+/* Corpo do produto */
+
+.product-body {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/* Título */
+
+.product h3 {
+    font: 600 31px 'Cormorant Garamond', Georgia, serif;
+
+    color: var(--wine);
+
+    margin: 9px 0 4px;
+}
+
+
+/* Descrição */
+
+.product p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.25;
+}
+
+
+/* Categoria */
+
+.product small,
+.tutorial small {
+    color: var(--pink-deep);
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+
+/* Parte inferior do produto */
+
+.product-bottom {
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 14px;
+}
+
+
+/* Link do produto */
+
+.product-link {
+    display: inline-block;
+
+    background: #7f2147;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    padding: 9px 13px;
+
+    font-weight: 700;
+
+    font-size: 13px;
+}
+
+
+.product-link:hover {
+    opacity: 0.88;
+}
+
+
+/* Nenhum produto encontrado */
+
+.empty {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 45px;
+
+    background: #fff8ef;
+
+    border-radius: 24px;
+
+    border: 1px solid #e2c9bd;
+}
+
+
+/* =========================================================
+   TUTORIAIS
+   ========================================================= */
+
+#tutorials {
+    background: var(--olive);
+
+    min-height: 100vh;
+
+    padding-bottom: 40px;
+}
+
+
+/* Cabeçalho */
+
+#tutorials .heading {
+    text-align: left;
+
+    padding-left: 6%;
+
+    padding-top: 60px;
+}
+
+
+#tutorials .heading h2 {
+    font-size: clamp(65px, 9vw, 110px);
+
+    color: var(--pink-deep);
+}
+
+
+/* Pesquisa */
+
+#tutorials .search {
+    margin-left: 5%;
+
+    margin-right: auto;
+
+    max-width: 450px;
+
+    background: #f2f2ef;
+
+    box-shadow: none;
+}
+
+
+/* Grid dos tutoriais */
+
+#tutorials .grid {
+    margin-left: 3%;
+
+    margin-right: 3%;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   CARD DE TUTORIAL
+   ========================================================= */
+
+.tutorial {
+    background: #ef9ca6;
+
+    border: 0;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 0 rgba(45, 27, 28, 0.12);
+
+    transition: 0.2s ease;
+}
+
+
+.tutorial:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Vídeo */
+
+.tutorial iframe {
+    width: 100%;
+
+    height: 220px;
+
+    border: 0;
+
+    background: #d97b8b;
+}
+
+
+/* Conteúdo */
+
+.tutorial div {
+    padding: 18px 20px 20px;
+
+    background: #ef9ca6;
+}
+
+
+/* Título */
+
+.tutorial h3 {
+    color: #171212;
+
+    font-family: 'DM Sans', Arial, sans-serif;
+
+    font-size: 20px;
+}
+
+
+/* Texto */
+
+.tutorial p {
+    color: #3b3032;
+
+    margin-bottom: 0;
+}
+
+
+/* Botão do YouTube */
+
+.watch {
+    display: inline-block;
+
+    background: #fff8ef;
+
+    color: #7f2147;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    padding: 9px 13px;
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+.watch:hover {
+    opacity: 0.88;
+}
+
+
+/* =========================================================
+   CONTROLE DE ACESSO
+   ========================================================= */
+
+.locked-nav {
+    transition: 0.2s ease;
+}
+
+
+/* Esconde Produtos e Tutoriais antes do login */
+
+.nav-hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    /* Cabeçalho */
+
+    header {
+        padding: 14px 18px;
+
+        gap: 8px;
+
+        align-items: center;
+    }
+
+
+    .logo {
+        letter-spacing: 4px;
+    }
+
+
+    nav {
+        max-width: 100%;
+
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    nav button {
+        padding: 9px 12px;
+    }
+
+
+    /* Home */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 55px 28px 35px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(76px, 19vw, 115px);
+
+        margin-bottom: 35px;
+    }
+
+
+    .hero p {
+        font-size: 23px;
+    }
+
+
+    /* Ilustração */
+
+    .art {
+        height: 410px;
+
+        margin-top: 10px;
+    }
+
+
+    .palette {
+        right: 0;
+
+        width: 92%;
+
+        height: 225px;
+    }
+
+
+    /* Recursos */
+
+    .features {
+        grid-template-columns: 1fr;
+
+        padding: 30px 30px 45px;
+
+        gap: 0;
+    }
+
+
+    .features article {
+        padding: 18px 0;
+    }
+
+
+    /* Cards */
+
+    .card {
+        margin: 20px 18px;
+
+        padding: 34px 25px;
+    }
+
+
+    .card h2 {
+        font-size: 55px;
+    }
+
+
+    /* Títulos */
+
+    .heading {
+        padding: 50px 20px 20px;
+    }
+
+
+    .heading h2 {
+        font-size: 65px;
+    }
+
+
+    /* Pesquisa */
+
+    .search {
+        margin-left: 20px;
+
+        margin-right: 20px;
+    }
+
+
+    /* Grid */
+
+    .grid {
+        grid-template-columns: 1fr;
+
+        padding: 0 20px;
+    }
+
+
+    /* Tutoriais */
+
+    #tutorials .heading {
+        padding-left: 28px;
+    }
+
+
+    #tutorials .search {
+        margin-left: 20px;
+
+        max-width: none;
+    }
+
+
+    #tutorials .grid {
+        grid-template-columns: 1fr;
+
+        margin: 25px 0 60px;
+    }
+
+
+    /* Retira o deslocamento dos cards */
+
+    .tutorial:nth-child(2),
+    .tutorial:nth-child(3) {
+        margin-top: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE PARA CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    /* Cabeçalho */
+
+    header {
+        position: relative;
+
+        display: block;
+
+        text-align: center;
+    }
+
+
+    .logo {
+        margin-bottom: 6px;
+    }
+
+
+    nav {
+        justify-content: center;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 38px;
+    }
+
+
+    .hero em {
+        font-size: 34px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+
+    .hero p {
+        font-size: 21px;
+    }
+
+
+    /* Botões */
+
+    .big {
+        padding: 13px 19px;
+    }
+
+
+    /* Ilustração */
+
+    .art {
+        transform: scale(0.9);
+
+        transform-origin: center top;
+
+        margin-bottom: -35px;
+    }
+
+
+    /* Recursos */
+
+    .features h3 {
+        font-size: 29px;
+    }
+
+
+    /* Títulos */
+
+    .heading h2,
+    #tutorials .heading h2 {
+        font-size: 58px;
+    }
+
+
+    /* Pesquisa */
+
+    .search input {
+        min-width: 0;
+    }
+  }
